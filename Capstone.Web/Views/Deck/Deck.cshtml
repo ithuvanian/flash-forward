@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <title>@ViewBag.Title - Decks</title>
+}
+
+@using Capstone.Web.Models
+@model List<Deck>
+
+<h2 class="title">Your Decks</h2>
+<div>
+    <div class="row new_deck">
+        <div class="col-lg-2">
+            @Html.ActionLink("New Deck", "AddDeck", "Deck", null, new { @class = "list_item btn" })
+        </div>
+        @if (Model.Count != 0)
+        {
+            <div class="col-lg-6">
+                @using (Html.BeginForm("DeckSearchByName", "Deck", FormMethod.Get))
+                {
+                    @Html.TextBox("SearchName")
+                    <button type="submit" class="list_item btn" id="SearchName">Search Name</button>
+                }
+            </div>
+            <div class="col-lg-4">
+
+                @using (Html.BeginForm("DeckSearchByTag", "Deck", FormMethod.Get))
+                {
+                    @Html.DropDownList("SearchString", Model[0].AllTagsSelectList, new { @class = "left_field" })
+                    <button type="submit" class="list_item btn">Search Tag</button>
+                }
+
+            </div>
+        }
+    </div>
+
+    <div class="deck_list">
+        @if (Model.Count == 0)
+        {
+            <p class="deck_list">
+                You don't have any decks yet. Create one now by clicking "New Deck" above.
+            </p>
+        }
+        else
+        {
+            foreach (var deck in Model)
+            {
+                if (deck.DeckID != null)
+                {
+                    string deckLink = "../Deck/EditDeck/" + deck.DeckID;
+
+                <a href="@deckLink" class="deck_name">
+                    <h6>@deck.Name</h6>
+                    <p>View and edit</p>
+                </a>
+
+                    if (deck.DeckCards.Count > 0)
+                    {                    
+                        <button class="list_item btn">
+                        @Html.ActionLink("Study this deck >>", "BeginStudy", "Deck", new { deckID = deck.DeckID }, null)
+                        </button>
+                    }
+                }
+                else
+                {
+                    <p>No decks found by that criteria. See <a href="~/Deck">all decks</a> or search again.</p>
+                }
+                <hr />
+            }
+        }
+    </div>
+</div>
+

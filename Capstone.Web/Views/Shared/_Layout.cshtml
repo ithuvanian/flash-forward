@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Flash Cards</title>
+    <link rel="stylesheet" href="~/Content/styles.css">
+    <link rel="stylesheet" href="~/Content/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+
+
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/DeckScripts/EditDeck.js"></script>
+</head>
+
+<body>
+    <div class="top_border"></div>
+    <div class="container">
+        <div class="top">
+            <header>
+                <h1 class="title">Flash Forward</h1>
+            </header>
+            <div class="row card_flex_container" id="top_links">
+
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list_item btn col-lg-1" })
+                @Html.ActionLink("Decks", "Index", "Deck", null, new { @class = "list_item btn col-lg-1" })
+                @Html.ActionLink("Cards", "Index", "Card", null, new { @class = "list_item btn col-lg-1" })
+                @if (Session["userid"] == null)
+                {
+                    @Html.ActionLink("Register", "Register", "Home", null, new { @class = "list_item btn col-lg-1" })
+                    @Html.ActionLink("Login", "Login", "Home", null, new { @class = "list_item btn col-lg-1" })
+                }
+                @if (Session["userid"] != null)
+                {
+                    @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "list_item btn col-lg-1" })
+                }
+            </div>
+        </div>
+    </div>
+    <section class="centeredPanel">
+        <div class="main_body">
+            @RenderBody()
+        </div>
+    </section>
+</body>
+</html>

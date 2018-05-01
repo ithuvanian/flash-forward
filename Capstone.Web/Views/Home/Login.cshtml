@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models;
+@model User
+
+<h2 class="title">Login</h2>
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    @Html.ValidationMessage("invalid-credentials")
+    <div class="formValidationGroup">
+        @Html.LabelFor(m => m.Email)
+        @Html.EditorFor(m => m.Email, new { htmlAttributes = new { autofocus = "autofocus" } })
+    </div>
+
+    <div class="formValidationGroup">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+    </div>
+
+    <button class="list_item btn">Flash Forward >></button>
+
+}

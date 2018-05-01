@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models;
+@model Deck
+
+
+<h2 class="title">New Deck</h2>
+
+@using (Html.BeginForm("AddDeck", "Deck", FormMethod.Post))
+{
+    <div>
+        @Html.Label("Name", "Deck Name: ")
+        @Html.TextBoxFor(m => m.Name)
+        <button class="list_item btn">Add Deck</button>
+    </div>
+
+}

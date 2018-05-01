@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="title">Cards</h2>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-4">
+            <div class="index_option">
+                @Html.ActionLink("Create a Card", "CardConstruct", "Card")
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="index_option">
+                @Html.ActionLink("View My Cards", "CardView", "Card")
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="index_option">
+                @Html.ActionLink("View All Public Cards", "CardViewWithAdmin", "Card")
+            </div>
+        </div>
+
+    </div>
+
+    <div class="index_option">
+        @using (Html.BeginForm("CardSearch", "Card", FormMethod.Get))
+        {
+            <span>
+                @Html.TextBox("SearchString")
+            </span>
+            
+            <button type="submit" class="list_item btn">Search by Tag</button>
+        }
+    </div>
+
+</div>

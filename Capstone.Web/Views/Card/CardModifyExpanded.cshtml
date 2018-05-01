@@ -1,0 +1,101 @@
+﻿@using Capstone.Web.Models
+@using System.Collections.Generic
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int tagCount = Model.ThisCardTags.Count;
+}
+@model Card
+
+<script type="text/javascript" src="../../Scripts/CardScripts/card.js"></script>
+<div hidden id="tagCount" data-name="@tagCount"></div>
+
+
+
+<div class="toprow">
+    <div class="row_left">
+        <h2 class="modify_header title">Modify card</h2>
+    </div>
+    <div class="row_right">
+        <div>
+            @Html.ActionLink("<< Return to cards", "CardView", "Card", new { @class = "list_item row_right btn" })
+        </div>
+        <div>
+            <div class="row_right">All changes saved automatically</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-3">
+            @using (Html.BeginForm("CardEditFields", "Card", new { id = Model.CardID, front = Model.Front.Trim(), back = Model.Back.Trim(), tags = Model.ThisCardTags }, FormMethod.Get, new { @class = "edit_fields_action" }))
+            {
+                <div>
+                    <h6 class="bold_heading">Front of card:</h6>
+                    @Html.TextAreaFor(m => m.Front, new { @id = "front_field", @class = "wide_textarea" })
+
+                    <h6 class="bold_heading">Back of card:</h6>
+                    @Html.TextAreaFor(m => m.Back, new { @id = "back_field", @class = "wide_textarea" })
+                </div>
+            }
+        </div>
+
+
+        <div class="col-md-9">
+
+            <h6 class="bold_heading">Tags:</h6>
+
+            <div class="tag_container">
+
+                <div class="tag_section all_tags">
+
+                    @foreach (string tag in Model.ThisCardTags)
+                    {
+
+                        using (Html.BeginForm("RemoveCardTag", "Card", new { cardID = Model.CardID, tagName = tag, expanded = true }, FormMethod.Post, new { @class = "remove_tag_action" }))
+                        {
+                            <span class="added_tag">@tag</span>
+                            @Html.HiddenFor(m => Model.CardID)
+                            <span id="@tag" class="x_button remove_tag">&#x2297;</span>
+                        }
+
+                    }
+
+                    <p></p>
+                    <h6 class="bold_heading">Choose tags to add to your card:</h6>
+
+                    <div class="tag_section">
+                        @foreach (string tag in Model.AllTags)
+                        {
+                            if (!Model.ThisCardTags.Contains(tag))
+                            {
+                                using (Html.BeginForm("AddCardTag", "Card", new { cardID = Model.CardID, tagName = tag, expanded = true }, FormMethod.Post, new { @class = "add_tag_action" }))
+                                {
+                                    <span id="@tag" class="add_tag inactive_tag">@tag</span>
+
+                                }
+                            }
+                        }
+                        <div>
+                            @Html.ActionLink("^^ See less", "TagCollapse", "Card", new { id = Model.CardID }, null)
+                        </div>
+                    </div>
+
+
+                    <h6 class="createtag bold_heading">Create a new tag for your card:</h6>
+
+                    <div class="tag_section">
+                        @using (Html.BeginForm("CreateCardTag", "Card", FormMethod.Post))
+                        {
+                            <input name="TagName" />
+
+                            @Html.HiddenFor(m => Model.CardID)
+                            <input type="submit" class="list_item btn" value="Add New Tag">
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

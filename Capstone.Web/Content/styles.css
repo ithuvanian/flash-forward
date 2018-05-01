@@ -1,0 +1,449 @@
+﻿
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: url('backgrounds/arrowbg5.png') no-repeat;
+    margin: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+}
+
+.main_body a {
+    color: black;
+}
+
+    .main_body a:hover {
+        color: #912424;
+    }
+
+.logo_photo {
+    height: 40%;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.top {
+    font-size: 400%;
+    color: white;
+}
+
+.top_border {
+    width: 100vw;
+    height: 10px;
+    background: rgba(0,0,0,0.7);
+}
+
+body hr {
+    background: black;
+}
+
+.hiddenSide, .hiddenNav {
+    display: none;
+}
+
+.tooltip_text {
+    visibility: hidden;
+}
+
+
+/*layout*/
+.title {
+    opacity: .8;
+    font-family: 'Gugi', sans-serif;
+}
+
+h1.title {
+    font-size: 1.25em;
+    opacity: .5;
+}
+
+h2.title {
+    font-size: 2em;
+}
+
+a.list_item, button.list_item, input.list_item {
+    text-decoration-style: none;
+    background-color: #912424;
+    color: white;
+    margin: 15px;
+    padding: 7px;
+}
+
+    button.list_item a, button.list_item span {
+        color: white;
+        padding: 10px;
+    }
+
+        button.list_item a:hover, button.list_item span:hover {
+            color: #912424;
+        }
+
+
+.list_item:hover {
+    background-color: white;
+    color: #912424;
+    text-decoration-style: none;
+    border: 1px solid #912424;
+}
+
+.top_links {
+    margin: 0 auto;
+}
+
+#top_links {
+    margin: 0 auto;
+}
+
+.main_body {
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 3%;
+    color: black;
+    font-weight: 500;
+}
+
+.added_tag {
+    display: inline-block;
+    background-color: #31156f;
+    color: white;
+    padding: 1px 5px;
+    margin-bottom: 4px;
+}
+
+.x_button {
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+    .x_button:hover {
+        color: #912424;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.remove_card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1em;
+    padding: 1px;
+    line-height: 1em;
+    font-size: 1.6em;
+}
+
+.left_field {
+    max-width: 50%;
+    margin-top: 20px;
+    height: 30px;
+    float: left;
+}
+
+/*homepage*/
+.site_intro {
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+/*decks*/
+.search {
+    float: right;
+    padding: 1%;
+}
+
+.deck_name {
+    text-decoration: none;
+}
+
+.new_deck {
+    margin-bottom: 2%;
+}
+
+.removeTag {
+    display: inline-block;
+}
+
+.createTag {
+    margin-top: 10px;
+}
+
+.tag_list {
+    margin-right: 1%;
+    margin-left: 1%;
+    display: inline-block;
+}
+
+.deck_list h6 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.add_cards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.editDeck_options div {
+    display: inline-block;
+}
+
+.success_msg {
+    background: #416135;
+    color: white;
+}
+
+
+/*cards*/
+
+.card_flex_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card_bothsides {
+    display: inline-block;
+    position: relative;
+    padding: 15px;
+    padding-top: 20px;
+    margin: 15px;
+    height: 30vh;
+    min-height: 300px;
+    width: 25%;
+    min-width: 350px;
+    overflow: auto;
+    background: rgba(255,255,255,0.5);
+    color: black;
+}
+
+    .card_bothsides li {
+        list-style-type: none;
+    }
+
+
+    .card_bothsides a:hover {
+        color: #31156f
+    }
+
+.card_options {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+
+.card_front, .card_back {
+    background: #fff;
+    margin: 10px;
+    padding: 10px;
+}
+
+.card_front {
+    top: 0;
+}
+
+.card_back {
+    bottom: 0;
+}
+
+.inactive_tag {
+    display: inline-block;
+    background: #444;
+    color: #fff;
+    padding: 1px 5px;
+    margin-bottom: 4px;
+}
+
+    .inactive_tag:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+    }
+
+.index_option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    font-size: 1.5em;
+}
+
+    .index_option a {
+        color: black;
+    }
+
+    .index_option form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .index_option a:hover {
+        color: #912424;
+    }
+
+/*card search results*/
+.noresults_option a {
+    color: black;
+}
+
+/*modify card*/
+
+.modify_header {
+    display: inline-block;
+}
+
+.toprow {
+    clear: both;
+    overflow: auto;
+}
+
+.row_left {
+    float: left;
+}
+
+.row_right {
+    float: right;
+}
+
+.wide_textarea {
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.bold_heading {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.selected {
+    background: #ccc;
+}
+
+.tag_section {
+    margin-bottom: 20px;
+}
+
+
+.add_tag_action {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.remove_tag_action {
+
+    display: inline-block;
+    margin-right: 20px;
+    color: #333;
+    background: rgba(0,0,0,0);
+}
+
+/*study session*/
+
+
+.studyFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    flex-direction: column;
+}
+
+.cardFrame {
+    width: 550px;
+    max-width: 90vw;
+    height: 350px;
+    max-height: 60vw;
+    position: relative;
+}
+
+.studyCard {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    color: black;
+    font-size: 2em;
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all .3s ease;
+}
+
+.newCard {
+    transform: translateX(100vw);
+}
+
+.activeCard {
+}
+
+.oldCard {
+    transform: translateX(-100vw);
+}
+
+
+.markFrame div {
+    display: inline-block;
+}
+
+    .markFrame div:hover, .finish:hover {
+        cursor: pointer;
+    }
+
+.studyNav {
+    background: #333;
+    color: white;
+    margin: 10px;
+    text-decoration-style: none;
+    color: white;
+}
+
+    .studyNav:hover {
+        cursor: pointer;
+    }
+
+.flip, .markFrame div {
+    padding: 10px;
+}
+
+.markRight:hover {
+    background: darkgreen;
+    color: white;
+}
+
+.markWrong:hover {
+    background: darkred;
+    color: white;
+}
+
+.score div {
+    margin-top: 10px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.resultsFrame a {
+    color: black;
+}

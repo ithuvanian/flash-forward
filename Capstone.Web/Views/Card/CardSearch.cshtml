@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model List<Card>
+
+<h2 class="title">Card search results</h2>
+
+
+@{
+    if (Model.Count == 0)
+    {
+        <p>No cards found with that tag.</p>
+        <p class="noresults_option">@Html.ActionLink("View all cards", "CardView", "Card")</p>
+        <p class="noresults_option">@Html.ActionLink("Create a new card", "CardConstruct", "Card")</p>
+    }
+    else
+    {
+        <div class="card_flex_container">
+
+           
+                @foreach (Card thisCard in Model)
+                 {
+
+                    <div class="card_bothsides">
+                        <div class="card_front">@thisCard.Front</div>
+                        <div class="card_back">@thisCard.Back</div>
+                        <div class="card_option">
+                            @Html.ActionLink("Add card to deck", "CardToDeck", "Card")
+                        </div>
+                        <div>
+                            @Html.ActionLink("Modify this card", "CardModify", "Card", new { id = thisCard.CardID }, null)
+                        </div>
+                    </div>
+                 }
+
+        </div>
+    }
+}

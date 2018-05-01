@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Capstone.Web.Models
+@model List<Card>
+
+<h2 class="title">All your cards</h2>
+
+<div class="card_flex_container">
+
+    @{
+        if (Model.Count == 0)
+        {
+            <p>
+                You don't have any cards yet.
+                @Html.ActionLink("Create some here.", "CardConstruct", "Card")
+            </p>
+        }
+        foreach (Card thisCard in Model)
+        {
+
+            <div class="card_bothsides">
+                <div class="card_front">@thisCard.Front</div>
+                <div class="card_back">@thisCard.Back</div>
+                <div class="card_tags">
+                    @{
+                        //cap the number of tags to display in this view at 7
+                        if (thisCard.ThisCardTags.Count > 7)
+                        {
+                            for (int i = 0; i < 7; i++)
+                            {
+                                string tag = thisCard.ThisCardTags[i];
+                                <span class="added_tag">@tag</span>
+                            }
+                            <span>...</span>
+                        }
+                        else
+                        {
+                            foreach (string tag in thisCard.ThisCardTags)
+                            {
+                                <span class="added_tag">@tag</span>
+                            }
+                        }
+                    }
+                </div>
+
+                <div class="card_options">
+                    <button class="list_item btn float-left">
+                        @Html.ActionLink("Add to deck", "CardToDeck", "Card", new { cardID = thisCard.CardID }, null)
+                    </button>
+                    <button class="list_item btn float-right">
+                        @Html.ActionLink("Modify", "CardModify", "Card", new { id = thisCard.CardID }, null)
+                    </button>
+                </div>
+
+            </div>
+
+
+                        }
+    }
+
+</div>

@@ -1,0 +1,59 @@
+﻿@using Capstone.Web.Models
+@model Deck
+@{
+    ViewBag.Title = "Study Session";
+    int cardCount = Model.DeckCards.Count;
+}
+
+<script type="text/javascript" src="../../Scripts/DeckScripts/study.js"></script>
+<div hidden id="cardCount" data-name="@cardCount"></div>
+
+<h2 class="title">Study Session</h2>
+
+<div class="studyFrame">
+
+    <div class="studyNavFrame">
+        <div class="flip studyNav">Flip card</div>
+        <div class="markFrame hiddenNav">
+            <div class="markWrong studyNav">Mark wrong</div>
+            <div class="markRight studyNav">Mark right</div>
+        </div>
+    </div>
+
+    <div class="cardFrame">
+        @{
+            foreach (Card currentCard in Model.DeckCards)
+            {
+                <div class="studyCard newCard">
+                    <div class="cardFront">
+                        <p>@currentCard.Front</p>
+                    </div>
+                    <div class="cardBack hiddenSide">
+                        <p>@currentCard.Back</p>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+    <div class="score">
+        <div class="totalCorrect"></div>
+        <span>of</span>
+        <div class="totalViewed"></div>
+        <span>correct-</span>
+        <div class="finish">Quit</div>
+    </div>
+
+</div>
+
+<div class="resultsFrame">
+    <div class="finalScore">
+        <p>You got <span id="finalScore"></span> out of <span id="possibleScore"></span> correct.</p>
+    </div>
+    <div>
+        <button class="list_item btn">@Html.ActionLink("Study again >>", "BeginStudy", "Deck", new { deckID = Model.DeckID }, null)</button>
+    </div>
+    <div>
+        <button class="list_item btn">@Html.ActionLink("Return to your decks >>", "Index", "Deck")</button>
+    </div>
+</div>

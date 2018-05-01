@@ -1,0 +1,42 @@
+﻿@using Capstone.Web.Models
+@model List<Deck>
+@{
+    ViewBag.Title = "SelectDeck";
+    List<Deck> availableDecks = ViewBag.CurCard.AvailableDecksToAddThisCard(Session["userid"].ToString());
+    List<Deck> decksWithCard = ViewBag.CurCard.DecksHaveThisCard(Session["userid"].ToString());
+}
+
+@{
+    <h2 class="title">Add card to deck:</h2>
+    if (availableDecks.Count > 0)
+    {
+        foreach (Deck thisDeck in availableDecks)
+        {
+            <li class="deck_list">
+                @Html.ActionLink(thisDeck.Name, "AddCardToDeck", new { cardID = ViewBag.CardID, deckID = thisDeck.DeckID })
+            </li>
+        }
+    }
+
+    if (Model.Count == 0)
+    {
+        <p class="deck_list">
+            You don't have any decks yet.
+            @Html.ActionLink("Create one here.", "AddDeck", "Deck")
+        </p>
+    }
+
+    <hr />
+
+    if (decksWithCard.Count > 0)
+    {
+        <h5>Your card is currently in these decks:</h5>
+        foreach (Deck thisDeck in decksWithCard)
+        {
+            <li>
+                @Html.Label(thisDeck.Name)
+            </li>
+        }
+    }
+
+}
