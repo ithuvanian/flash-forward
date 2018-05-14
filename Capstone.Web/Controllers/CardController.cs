@@ -13,9 +13,9 @@ namespace Capstone.Web.Controllers
 
     public class CardController : Controller
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString;
-        private CardSqlDAL cDal = new CardSqlDAL(ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString);
-        private DeckSqlDAL dDal = new DeckSqlDAL(ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString);
+        private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
+        private CardSqlDAL cDal = new CardSqlDAL(ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString);
+        private DeckSqlDAL dDal = new DeckSqlDAL(ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString);
 
 
         // GET: Card
@@ -41,7 +41,7 @@ namespace Capstone.Web.Controllers
             return View("CardCreate");
         }
 
-        //add created card
+        //add created card to database
         public ActionResult CardSubmit(Card newCard)
         {
             if (Session["userid"] == null)
@@ -89,19 +89,18 @@ namespace Capstone.Web.Controllers
         }
 
         //view all user cards
-        public ActionResult CardViewWithAdmin()
+        public ActionResult CardViewPublic()
         {
             if (Session["userid"] == null)
             {
                 return RedirectToAction("Login", "Home");
             }
 
-            List<Card> allCardsWithAdmin = cDal.ViewCardsWithAdminCards(Session["userid"].ToString());
+            List<Card> allPublicCards = cDal.ViewAllPublicCards(Session["userid"].ToString());
 
-            return View("CardView", allCardsWithAdmin);
+            return View("CardViewPublic", allPublicCards);
         }
 
-        //modify cards
         public ActionResult CardModify(string id)
         {
             if (Session["userid"] == null)

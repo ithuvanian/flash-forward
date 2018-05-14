@@ -9,7 +9,7 @@ namespace Capstone.Web.Models
 {
     public class Card
     {
-        private string connectionString = ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 
         public string CardID { get; set; }
         public string Front { get; set; }

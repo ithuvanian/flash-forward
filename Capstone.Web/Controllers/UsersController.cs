@@ -13,7 +13,7 @@
 //{
 //    public class UsersController : Controller
 //    {
-//        private string connectionString = ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString;
+//        private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 
 //        private AdminContext db = new AdminContext();
 

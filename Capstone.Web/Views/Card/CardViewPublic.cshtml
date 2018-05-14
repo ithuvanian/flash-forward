@@ -5,7 +5,7 @@
 @using Capstone.Web.Models
 @model List<Card>
 
-<h2 class="title">All your cards</h2>
+<h2 class="title">All public cards</h2>
 
 <div class="card_flex_container">
 
@@ -49,9 +49,6 @@
                     <button class="list_item btn float-left">
                         @Html.ActionLink("Add to deck", "CardToDeck", "Card", new { cardID = thisCard.CardID }, null)
                     </button>
-                    <button class="list_item btn float-right">
-                        @Html.ActionLink("Modify", "CardModify", "Card", new { id = thisCard.CardID }, null)
-                    </button>
                 </div>
 
             </div>
@@ -59,5 +56,3 @@
 
         }
     }
-
-</div>

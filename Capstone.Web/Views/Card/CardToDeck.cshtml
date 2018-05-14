@@ -22,7 +22,8 @@
     {
         <p class="deck_list">
             You don't have any decks yet.
-            @Html.ActionLink("Create one here.", "AddDeck", "Deck")
+            <br />
+            @Html.ActionLink("Create one here!", "AddDeck", "Deck", null, new { @class = "create_link" })
         </p>
     }
 

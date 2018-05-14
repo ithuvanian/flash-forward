@@ -29,7 +29,7 @@ namespace Capstone.Web.DAL
         private string search_Card = "SELECT * FROM[cards] JOIN card_tag ON cards.CardID = card_tag.CardID JOIN tags on card_tag.TagID = tags.TagID WHERE[TagName] = @TagName";
 
         private string getAdminListSQL = "SELECT UserID FROM users WHERE IsAdmin = 1;";
-        private string view_cards_by_userID_with_Admin = "SELECT * FROM [cards] WHERE UserID IN (SELECT value FROM STRING_SPLIT(@userSplitValue, ','));";
+        private string view_public_cards_by_userID = "SELECT * FROM [cards] WHERE UserID IN (SELECT value FROM STRING_SPLIT(@userSplitValue, ','));";
 
         public CardSqlDAL(string connectionString)
         {
@@ -215,7 +215,7 @@ namespace Capstone.Web.DAL
         }
 
         //Get user cards and Admin Cards
-        public List<Card> ViewCardsWithAdminCards(string userID)
+        public List<Card> ViewAllPublicCards(string userID)
         {
             List<Card> result = new List<Card>();
             List<string> userIDList = this.PublicUserList();
@@ -226,23 +226,8 @@ namespace Capstone.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+                    //
 
-                    string userSplit = "";
-
-                    foreach (string item in userIDList)
-                    {
-                        userSplit += item + ",";
-                    }
-
-                    SqlCommand cmd = new SqlCommand(view_cards_by_userID_with_Admin, conn);
-                    cmd.Parameters.AddWithValue("@userSplitValue", userSplit);
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        result.Add(ConvertFields(reader));
-                    }
                 }
             }
             catch (Exception ex)

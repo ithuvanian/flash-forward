@@ -14,8 +14,8 @@ namespace Capstone.Web.Controllers
     {
 
 
-        private string connectionString = ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString;
-        // GET: Home
+        private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
+
         public ActionResult Index()
         {
             //temporary user id

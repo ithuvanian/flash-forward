@@ -17,7 +17,7 @@ namespace Capstone.Web.Tests.DAL
         {
             private TransactionScope tran;
 
-            private string connectionString = ConfigurationManager.ConnectionStrings["HotelFlashCardsDB"].ConnectionString;
+            private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
             private int numTags = 0;
             private int deckID = 0;
             private int cardID = 0;
