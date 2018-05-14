@@ -26,7 +26,7 @@ The database folder contains two files: `schema.sql` and `data.sql`.
     - jQuery.Validation.Unobtrusive
     - Bootstrap
 
-**## User Stories**
+**User Stories**
 ---
 - Register
 	- As an anonymous guest, I can register for a new account on the website.
