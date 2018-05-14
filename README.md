@@ -1,4 +1,4 @@
-This is a C# .NET MVC application that can be run from MS Visual Studio with IIS. Database queries have been prepared for SQL Server. First, create a database titled "HotelFlashcards", then run "database/schema.sql" and "database/data.sql".
+This is a C# .NET MVC application that can be run from MS Visual Studio with IIS. Database queries have been prepared for SQL Server. First, create a database titled "HotelFlashcards", then run "db/schema.sql" and "db/data.sql".
 
 # Final Capstone
 
