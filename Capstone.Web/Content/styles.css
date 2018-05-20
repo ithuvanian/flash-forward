@@ -48,6 +48,11 @@ body hr {
 
 
 /*layout*/
+
+.top_link {
+    min-width: 100px;
+}
+
 .title {
     opacity: .8;
     font-family: 'Gugi', sans-serif;
@@ -86,14 +91,6 @@ a.list_item, button.list_item, input.list_item {
     color: #912424;
     text-decoration-style: none;
     border: 1px solid #912424;
-}
-
-.top_links {
-    margin: 0 auto;
-}
-
-#top_links {
-    margin: 0 auto;
 }
 
 .main_body {

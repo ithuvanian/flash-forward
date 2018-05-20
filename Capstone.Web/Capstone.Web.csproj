@@ -189,7 +189,6 @@
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\DeckController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\CardSqlDAL.cs" />
     <Compile Include="DAL\DeckSqlDAL.cs" />
     <Compile Include="DAL\TagsSqlDAL.cs" />

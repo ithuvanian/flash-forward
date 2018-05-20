@@ -19,9 +19,8 @@ namespace Capstone.Web.Controllers
         public ActionResult Index()
         {
             //temporary user id
-            //Session["userid"] = "7";
+            //Session["userid"] = "";
 
-            Session["anon"] = "Home";
             return View("Index");
         }
 

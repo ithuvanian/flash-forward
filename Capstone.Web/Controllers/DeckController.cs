@@ -22,6 +22,7 @@ namespace Capstone.Web.Controllers
                 Session["anon"] = "Decks";
                 return RedirectToAction("Login", "Home");
             }
+
             string user_id = Session["userid"].ToString();
             List<Deck> decks = deckDAL.GetDecksByUserID(user_id);
 

@@ -21,19 +21,20 @@
             <header>
                 <h1 class="title">Flash Forward</h1>
             </header>
-            <div class="row card_flex_container" id="top_links">
+            <div class="row card_flex_container">
 
-                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list_item btn col-lg-1" })
-                @Html.ActionLink("Decks", "Index", "Deck", null, new { @class = "list_item btn col-lg-1" })
-                @Html.ActionLink("Cards", "Index", "Card", null, new { @class = "list_item btn col-lg-1" })
+
+                @Html.ActionLink("Home", "Index", "Home", null, new { @class = "list_item btn top_link" })
+                @Html.ActionLink("Decks", "Index", "Deck", null, new { @class = "list_item btn top_link" })
+                @Html.ActionLink("Cards", "Index", "Card", null, new { @class = "list_item btn top_link" })
                 @if (Session["userid"] == null)
                 {
-                    @Html.ActionLink("Register", "Register", "Home", null, new { @class = "list_item btn col-lg-1" })
-                    @Html.ActionLink("Login", "Login", "Home", null, new { @class = "list_item btn col-lg-1" })
+                    @Html.ActionLink("Register", "Register", "Home", null, new { @class = "list_item btn top_link" })
+                    @Html.ActionLink("Login", "Login", "Home", null, new { @class = "list_item btn top_link" })
                 }
                 @if (Session["userid"] != null)
                 {
-                    @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "list_item btn col-lg-1" })
+                    @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "list_item btn top_link" })
                 }
             </div>
         </div>

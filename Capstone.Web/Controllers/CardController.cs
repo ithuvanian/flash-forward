@@ -26,6 +26,7 @@ namespace Capstone.Web.Controllers
                 Session["anon"] = "Cards";
                 return RedirectToAction("Login", "Home");
             }
+
             return View();
         }
 
