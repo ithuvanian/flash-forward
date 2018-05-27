@@ -417,7 +417,6 @@ C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\bin\Syst
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\bin\System.Web.WebPages.xml
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\bin\System.Web.WebPages.Razor.xml
-C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.csprojResolveAssemblyReference.cache
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.csproj.CoreCompileInputs.cache
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.csproj.CopyComplete
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.dll
