@@ -1,5 +1,3 @@
-USE [Flashcards]
-GO
 
 /****** Object:  Table [dbo].[card_deck]    Script Date: 4/9/2018 4:47:58 PM ******/
 SET ANSI_NULLS ON
