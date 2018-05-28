@@ -1,22 +1,39 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2 class="title">Hello!</h2>
 
+<h2 class="title">Hello!</h2>
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <div>
-               <p class="site_intro">Welcome to Flash Forward.  This is a great place for learning and growing.
-               To begin creating your own personal decks and cards for study sessions, create a login on our registration page and flex that brain!</p>
+                <p class="site_intro">
+                    On this site, you can create and save flashcards, group your cards in decks, add tags to decks and cards, and study your decks.
+                    @if (Session["userid"] == null)
+                    {
+                        <span>
+                            To begin,
+                            @Html.ActionLink("log in,", "Login", "Home", null, new { @class = "inline_link" }) or
+                            @Html.ActionLink("register!", "Login", "Home", null, new { @class = "inline_link" })
+                        </span>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li>@Html.ActionLink("Create some cards", "CardConstruct", "Card", null, new { @class = "inline_link" })</li>
+                            <li>@Html.ActionLink("View all your cards", "CardView", "Card", null, new { @class = "inline_link" })</li>
+                            <li>@Html.ActionLink("View and study your decks", "Index", "Deck", null, new { @class = "inline_link" })</li>
+                        </ul>
+                    }
+                </p>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-3">
             <div class="index_option">
-              
+
             </div>
         </div>
 

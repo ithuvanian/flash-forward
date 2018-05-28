@@ -142,6 +142,10 @@ a.list_item, button.list_item, input.list_item {
     float: left;
 }
 
+.inline_link {
+    font-weight: bold;
+}
+
 /*homepage*/
 .site_intro {
     font-size: 1.2em;

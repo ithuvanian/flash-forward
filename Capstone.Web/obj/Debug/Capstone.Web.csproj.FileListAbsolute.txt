@@ -421,3 +421,4 @@ C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debu
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.csproj.CopyComplete
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.dll
 C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.pdb
+C:\Users\Micha\Documents\MEGA\code\teProjects\FlashForward\Capstone.Web\obj\Debug\Capstone.Web.csprojResolveAssemblyReference.cache

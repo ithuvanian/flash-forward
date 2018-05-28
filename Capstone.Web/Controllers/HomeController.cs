@@ -16,10 +16,11 @@ namespace Capstone.Web.Controllers
 
         private string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 
-        public ActionResult Index()
+        public ActionResult Index(User model)
         {
             //temporary user id
             //Session["userid"] = "";
+            Session["anon"] = "Home";
 
             return View("Index");
         }

@@ -14,7 +14,7 @@
         {
             <p>
                 You don't have any cards yet.
-                @Html.ActionLink("Create some here.", "CardConstruct", "Card")
+                @Html.ActionLink("Create some here!", "CardConstruct", "Card", null, new { @class = "inline_link" })
             </p>
         }
         foreach (Card thisCard in Model)
