@@ -205,7 +205,7 @@ namespace Capstone.Web.Controllers
             //if empty input is submitted
             if (model.TagName == null)
             {
-                return RedirectToAction("Deck/EditDeck");
+                return RedirectToAction(model.DeckID, "Deck/EditDeck");
             }
             //makes all tags lowercase to avoid conflicts
             model.TagName = model.TagName.ToLower();

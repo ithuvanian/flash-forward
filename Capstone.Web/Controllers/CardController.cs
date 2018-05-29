@@ -224,7 +224,7 @@ namespace Capstone.Web.Controllers
             //if empty input is submitted
             if (model.TagName == null)
             {
-                return View("CardModify", model);
+                return View("CardModify", currentCard);
             }
             //makes all tags lowercase to avoid conflicts
             model.TagName = model.TagName.ToLower();

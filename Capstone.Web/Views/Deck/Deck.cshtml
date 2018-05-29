@@ -56,9 +56,7 @@
 
                     if (deck.DeckCards.Count > 0)
                     {                    
-                        <button class="list_item btn">
-                        @Html.ActionLink("Study this deck >>", "BeginStudy", "Deck", new { deckID = deck.DeckID }, null)
-                        </button>
+                        @Html.ActionLink("Study this deck >>", "BeginStudy", "Deck", new { deckID = deck.DeckID }, new { @class = "list_item btn" })
                     }
                 }
                 else

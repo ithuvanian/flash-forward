@@ -131,19 +131,14 @@
                 <div class="card_back">@card.Back</div>
 
                 @using (Html.BeginForm("RemoveThisCard", "Deck", new { id = card.CardID, expanded = false }, FormMethod.Post, new { @class = "remove_card_action" }))
-                    {
+                {
                     <span class="x_button remove_card">
                         &#x2297;
                     </span>
                 }
 
                 <div class="card_options">
-
-
-                    <button class="list_item btn">
-                        @Html.ActionLink("Modify this card", "CardModify", "Card", new { id = card.CardID }, null)
-                    </button>
-
+                    @Html.ActionLink("Modify this card", "CardModify", "Card", new { id = card.CardID }, new { @class = "list_item btn" })
                 </div>
             </div>
         }
@@ -151,7 +146,10 @@
 }
 else
 {
-    <p>There are no cards in this deck. <button class="list_item btn"> @Html.ActionLink("Add some here >>", "CardView", "Card")</button></p>
+    <p>
+        There are no cards in this deck.
+        @Html.ActionLink("Add some here >>", "CardView", "Card", null, new { @class = "list_item btn" })
+    </p>
 }
 
 

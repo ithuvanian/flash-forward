@@ -46,12 +46,11 @@
                 </div>
 
                 <div class="card_options">
-                    <button class="list_item btn float-left">
-                        @Html.ActionLink("Add to deck", "CardToDeck", "Card", new { cardID = thisCard.CardID }, null)
-                    </button>
-                    <button class="list_item btn float-right">
-                        @Html.ActionLink("Modify", "CardModify", "Card", new { id = thisCard.CardID }, null)
-                    </button>
+
+                        @Html.ActionLink("Add to deck", "CardToDeck", "Card", new { cardID = thisCard.CardID }, new { @class = "float-left list_item btn" })
+
+                        @Html.ActionLink("Modify", "CardModify", "Card", new { id = thisCard.CardID }, new { @class = "float-right list_item btn" })
+
                 </div>
 
             </div>

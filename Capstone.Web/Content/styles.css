@@ -233,10 +233,6 @@ a.list_item, button.list_item, input.list_item {
     }
 
 
-    .card_bothsides a:hover {
-        color: #31156f
-    }
-
 .card_options {
     position: absolute;
     width: 100%;
