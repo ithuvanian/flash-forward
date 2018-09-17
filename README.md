@@ -1,8 +1,4 @@
-Site is published [here!](http://flashforward.apphb.com/)
-
-A self-study site where users can create and modify their own flash cards, group cards into decks, and study decks while keeping a score of their answers.
-
-This is a C# .NET MVC application that can be run from MS Visual Studio with IIS. Database queries have been prepared for SQL Server. First, create a database titled "Flashcards", then run "db/schema.sql" and "db/data.sql".
+This was a group project from the Tech Elevator coding bootcamp. I have since created a site on my own based on this concept, which can be found [here](http://cardid.apphb.com/).
 
 # Final Capstone
 
