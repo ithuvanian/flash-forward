@@ -1,4 +1,4 @@
-This was a group project from the Tech Elevator coding bootcamp. I have since created a site on my own based on this concept, which can be found [here](http://cardid.apphb.com/).
+This was a group project from the Tech Elevator coding bootcamp. I have since completed a solo project based on this concept, which can be found [here](http://cardid.apphb.com/).
 
 # Final Capstone
 
